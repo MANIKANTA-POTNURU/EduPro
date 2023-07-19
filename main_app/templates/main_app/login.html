@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
+    <title>Login | Log in</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -20,23 +20,168 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Google Recaptcha     -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <style>
+        /* Add your CSS styles here */
+       body {
+            background-color: #7a79b5;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-logo a {
+            color: #333;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .card {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .login-card-body {
+            padding: 30px;
+        }
+
+        .login-box-msg {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-group-append .input-group-text {
+            background-color: #fff;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        .input-group-append .input-group-text:hover {
+            background-color: #eee;
+        }
+
+        .icheck-primary input[type="checkbox"]:checked + label::before {
+            border-color: #007bff;
+            background-color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .mb-1 {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
-<body class="hold-transition login-page">
+<!--<body class="hold-transition login-page">-->
+<!--    <div class="login-box">-->
+<!--        <div class="login-logo">-->
+<!--            <a href="../../index2.html"><b>Admin</b>LTE</a>-->
+
+<!--        </div>-->
+<!--        &lt;!&ndash; /.login-logo &ndash;&gt;-->
+<!--        <div class="card">-->
+<!--            <div class="card-body login-card-body">-->
+<!--                <p class="login-box-msg">Sign in to start your session</p>-->
+<!--                {% if messages %}-->
+<!--                <div class="col-12">-->
+<!--                    {% for message in messages %}-->
+<!--                    {% if message.tags == 'error' %}-->
+<!--                    <div class="alert alert-danger text-center ">-->
+<!--                        {{message }}-->
+<!--                    </div>-->
+<!--                    {% endif %}-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--                {% endif %}-->
+<!--                <form action="doLogin/" method="post">-->
+<!--                    {% csrf_token %}-->
+<!--                    <div class="input-group mb-3">-->
+<!--                        <input required type="email" name='email' class="form-control" placeholder="Email">-->
+<!--                        <div class="input-group-append">-->
+<!--                            <div class="input-group-text">-->
+<!--                                <span class="fas fa-envelope"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="input-group mb-3">-->
+<!--                        <input required type="password" name='password' class="form-control" placeholder="Password">-->
+<!--                        <div class="input-group-append">-->
+<!--                            <div class="input-group-text">-->
+<!--                                <span class="fas fa-lock"></span>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="input-group mb-3">-->
+<!--                        <div class="g-recaptcha" data-sitekey="6LfswtgZAAAAAJ7bhwqZZtDpBsc75ekH6FWA4Fnt"></div>-->
+
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-8">-->
+<!--                            <div class="icheck-primary">-->
+<!--                                <input type="checkbox" id="remember">-->
+<!--                                <label for="remember">-->
+<!--                                    Remember Me-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; /.col &ndash;&gt;-->
+<!--                        <div class="col-4">-->
+<!--                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>-->
+<!--                        </div>-->
+
+
+<!--                        &lt;!&ndash; /.col &ndash;&gt;-->
+<!--                    </div>-->
+<!--                </form>-->
+
+
+<!--                <p class="mb-1">-->
+<!--                    <a href="{% url 'password_reset' %}">I forgot my password</a>-->
+<!--                </p>-->
+
+<!--            </div>-->
+<!--            &lt;!&ndash; /.login-card-body &ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; /.login-box &ndash;&gt;-->
+
+<!--    &lt;!&ndash; jQuery &ndash;&gt;-->
+<!--    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>-->
+<!--    &lt;!&ndash; Bootstrap 4 &ndash;&gt;-->
+<!--    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!--    &lt;!&ndash; AdminLTE App &ndash;&gt;-->
+<!--    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>-->
+
+<!--</body>-->
+<body>
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
-
+            <a href="../../index2.html"><b>Login</b></a>
         </div>
-        <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+
                 {% if messages %}
                 <div class="col-12">
                     {% for message in messages %}
                     {% if message.tags == 'error' %}
-                    <div class="alert alert-danger text-center ">
+                    <div class="alert alert-danger text-center">
                         {{message }}
                     </div>
                     {% endif %}
@@ -49,7 +194,7 @@
                         <input required type="email" name='email' class="form-control" placeholder="Email">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+
                             </div>
                         </div>
                     </div>
@@ -57,13 +202,12 @@
                         <input required type="password" name='password' class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
+
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
                         <div class="g-recaptcha" data-sitekey="6LfswtgZAAAAAJ7bhwqZZtDpBsc75ekH6FWA4Fnt"></div>
-
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -74,34 +218,19 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-success btn-block">Sign In</button>
                         </div>
-
-
-                        <!-- /.col -->
                     </div>
                 </form>
-
-
                 <p class="mb-1">
                     <a href="{% url 'password_reset' %}">I forgot my password</a>
                 </p>
-
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
-
-    <!-- jQuery -->
-    <script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <!-- AdminLTE App -->
-    <script src="{% static 'dist/js/adminlte.min.js' %}"></script>
-
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.0.5/dist/js/adminlte.min.js"></script>
 </body>
-
 </html>
