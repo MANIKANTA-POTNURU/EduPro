@@ -1,6 +1,6 @@
 """
 WSGI config for student_management_system project.
-
+//wsgi
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see

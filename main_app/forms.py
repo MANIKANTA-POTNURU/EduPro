@@ -2,7 +2,7 @@ from django import forms
 from django.forms.widgets import DateInput, TextInput
 
 from .models import *
-
+#forms.py
 
 class FormSettings(forms.ModelForm):
     def __init__(self, *args, **kwargs):

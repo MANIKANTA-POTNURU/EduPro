@@ -106,9 +106,9 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Dbname',#dbname
+        'NAME': 'dummy',#dbname
         'USER': 'root',
-        'PASSWORD': 'Password',#Enter the sql password here
+        'PASSWORD': 'password',#Enter the sql password here
         'HOST': 'localhost',
         'PORT': '3306',
     }

@@ -4,7 +4,7 @@ from django.contrib import messages
 from .models import Subject, Staff, Student, StudentResult
 from .forms import EditResultForm
 from django.urls import reverse
-
+#editResultview
 
 class EditResultView(View):
     def get(self, request, *args, **kwargs):
